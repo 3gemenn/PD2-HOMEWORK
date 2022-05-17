@@ -1,18 +1,13 @@
-
-//Bir bagli dogrusal listelerde listenin basindaki dugumu keserek listenin sonuna ekleyen ve olusan listenin son halini geri donduren prototip programi.
-
-
 #include<stdio.h>
 #include<stdlib.h>
 
 struct Node {
 	int number;
-	Node* next;
+	struct Node* next;
 };
+typedef struct Node Node;
 
-    typedef struct Node Node;
-
-    Node* cutHeadAddToLast(Node* head) {
+Node* cutHeadAddToLast(Node* head) {
 	Node* tempHead = head;
 
 	if (tempHead == NULL || tempHead->next == NULL)
@@ -27,18 +22,19 @@ struct Node {
 
 	return newHead;
 }
-    int main() {
-
+int main() {
+    int x;
 	Node* head = NULL;
-	for (int x = 1; x <= 6; x++) {
-		Node* Node = (Node*)malloc(sizeof(Node));
-		Node->number = x;
-		Node->next = head;
-		head = Node;
+	for (x= 1; x <= 6; x++) {
+		Node* node = (Node*)malloc(sizeof(Node));
+		node->number = x;
+		node->next = head;
+		head = node;
 	}
 	head = cutHeadAddToLast(head);
 
-	while (head != NULL){
+	while (head != NULL)
+	{
 		printf("%d\n", head->number);
 		head = head->next;
 	}
