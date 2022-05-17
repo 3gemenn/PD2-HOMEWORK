@@ -1,11 +1,9 @@
-
-  //  klavyeden -1 girilene kadar verilen tek sayilari listenin basina, verilen cift sayilari ise listenin sonuna ekleyen program.
-
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node{
-    int num;
+struct Node{  
+struct int num;
+ 
 
     struct Node *next;
 }*head, *b, *newNode;
